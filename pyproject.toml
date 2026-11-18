@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ytld"
+version = "1.0.0"
+authors = [
+    { name = "Particle-1", email = "particle-1@particle.ai" }
+]
+description = "A robust YouTube downloader with MP3 audio support and deno JS runtime integration for reliable extraction"
+readme = "README.md"
+requires-python = ">=3.7"
+license = { file = "LICENSE" }
+dependencies = [
+    "yt-dlp>=2025.0.0",
+]
+keywords = ["youtube", "downloader", "yt-dlp", "mp3", "deno", "video", "audio"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Multimedia :: Video",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/boegaru/ytld"
+"Bug Tracker" = "https://github.com/boegaru/ytld/issues"
+Repository = "https://github.com/boegaru/ytld.git"
+
+[project.scripts]
+ytld = "ytld:main"

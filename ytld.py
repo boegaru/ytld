@@ -31,7 +31,12 @@ def _sigint_handler(signum, frame):
     sys.exit(0)
 
 
-signal.signal(signal.SIGINT, _sigint_handler)
+# Registering SIGINT works on Linux/macOS and most Windows setups; guard it
+# so the tool still runs in environments where signal handling is restricted.
+try:
+    signal.signal(signal.SIGINT, _sigint_handler)
+except (ValueError, OSError, AttributeError):
+    pass
 
 
 def progress_hook(d):
